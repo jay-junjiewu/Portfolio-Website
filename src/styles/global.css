@@ -5,12 +5,15 @@
     box-sizing: border-box;
 }
 
+
+
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Roboto', Arial;
     color: #333;
     line-height: 1.6;
     background-color: #f0f0f0;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 100px;
 }
 
 /* Dark Mode - Default */
@@ -45,14 +48,25 @@ header.dark-mode {
 /* Header Links and Theme Toggle */
 header nav a {
     text-decoration: none;
-    color: white;
+    color: #0056b3;  /* Light mode color */
     font-weight: bold;
+    margin-right: 40px;
+    font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
-header nav a:hover {
-    color: #f1f1f1;
+body.dark-mode header nav a {
+    color: #f5f5f5;
 }
+
+header nav a:hover {
+    color: #007BFF;
+}
+
+body.dark-mode header nav a:hover {
+    color: #007BFF;
+}
+
 
 header .theme-toggle {
     cursor: pointer;
@@ -71,3 +85,4 @@ header .theme-toggle.dark-mode {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+

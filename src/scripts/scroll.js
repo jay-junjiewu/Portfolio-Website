@@ -5,12 +5,14 @@ AOS.init({
     once: true,  // Trigger animation only once
 });
 
+/*
 // Smooth scrolling for project containers
 containers.forEach(container => {
     container.addEventListener('wheel', (event) => {
         event.preventDefault();
 
-        const scrollSpeed = 1;  // Adjust the speed multiplier
+        // Adjust the speed multiplier
+        const scrollSpeed = 0.5;  
         const scrollAmount = event.deltaY * scrollSpeed;
         const containerHeight = container.offsetHeight;
         const scrollTop = container.scrollTop;
@@ -18,7 +20,7 @@ containers.forEach(container => {
 
         container.scrollBy({
             top: scrollAmount,
-            behavior: 'auto'  // Immediate response for better user experience
+            behavior: 'auto'
         });
 
         if (event.deltaY > 0) {
@@ -40,3 +42,5 @@ containers.forEach(container => {
         }
     });
 });
+
+*/

@@ -3,12 +3,18 @@
     text-align: left;
     max-width: 1000px;
     margin: 60px auto;
+    margin-bottom: 0px;
 }
 
 #about h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-family: 'Space Mono', Arial;
+    font-weight: bold;
+    color:#0056b3;
+    font-size: 4rem;
+    margin-bottom: 0px;
+    margin-left: -30px;
 }
+
 
 #about p {
     font-size: 1.2rem;
