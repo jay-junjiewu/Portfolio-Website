@@ -5,8 +5,6 @@
     box-sizing: border-box;
 }
 
-
-
 body {
     font-family: 'Roboto', Arial;
     color: #333;
@@ -33,10 +31,19 @@ header {
     z-index: 1000;
     padding: 20px 30px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     transition: background-color 0.3s ease;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 /* Header in Dark Mode */
@@ -48,9 +55,10 @@ header.dark-mode {
 /* Header Links and Theme Toggle */
 header nav a {
     text-decoration: none;
-    color: #0056b3;  /* Light mode color */
+    color: #0056b3;
     font-weight: bold;
-    margin-right: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
@@ -84,5 +92,21 @@ header .theme-toggle.dark-mode {
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+/* Responsive Design - Mobile Layout */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        gap: 0px;
+    }
+
+    .header-left {
+        font-size: 1.2rem;
+    }
+
+    header nav a {
+        font-size: 0.9rem;
+    }
 }
 

@@ -23,7 +23,7 @@
     margin: 0 10px;
     padding: 1px 20px;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #0056b3;
     font-weight: bold;
     border-bottom: 2px solid transparent;
@@ -37,23 +37,24 @@
 
 /* Project Container */
 .projects-container {
-    display: none;
+    display: none; /* Hidden by default */
 }
 
 .projects-container.active {
     display: flex;
     animation: fadeIn 0.5s ease;
-    max-height: 100vh;
-    overflow-y: scroll;
-    flex-direction: column; /* Ensures a vertical stack of cards */
+    flex-direction: column; /* Stack project cards vertically */
     gap: 20px; /* Adds spacing between project cards */
     max-width: 1200px;
     margin: auto;
+    overflow: visible; /* Removes scrolling */
+    max-height: none; /* No height restriction */
 }
 
-/* Project Cards */
+/* Project Cards - Desktop Layout */
 .project-card {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     background: rgba(255, 255, 255, 0.9);
@@ -61,10 +62,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 20px 20px;
-    height: 250px;
+    width: 100%;
     min-height: 250px;
     flex-shrink: 0;
-    width: 100%;
+    height: 250px;
     box-sizing: border-box;
 }
 
@@ -78,6 +79,7 @@
     background: #2c2c2c;
 }
 
+/* Thumbnail - Desktop Layout */
 .project-thumbnail {
     width: 250px;
     height: 200px;
@@ -91,17 +93,21 @@
     border-radius: 10px;
 }
 
+/* Project Info */
 .project-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;  /* This will space out the items */
-    height: 100%;  /* Ensure it fills the container's height */
+    justify-content: space-between; 
+    width: 100%;
+    height: 100%;
+    text-align: left;
 }
 
 .project-info h4 {
     font-size: 2rem;
     margin-bottom: 10px;
     text-align: left;
+    flex-shrink: 0;
 }
 
 .project-info p {
@@ -109,7 +115,7 @@
     margin-bottom: 20px;
     margin-left: 10px;
     text-align: left;
-    flex-grow: 1;  /* Allow p to grow and take up available space */
+    flex-grow: 1;
 }
 
 .project-skills {
@@ -118,4 +124,45 @@
     margin-top: 20px;
     margin-left: 10px;
     margin-bottom: 5px;
+}
+
+/* Responsive Design - Mobile Layout */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: 10px;
+    }
+
+    .project-thumbnail {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .project-thumbnail img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .project-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .project-info h4 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .project-info p {
+        font-size: 1rem;
+    }
+
+    .project-skills {
+        margin-top: 10px;
+    }
 }
