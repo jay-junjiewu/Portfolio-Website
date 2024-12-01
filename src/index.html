@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Junjie's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/toggle-switch.css">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/projects.css">
+    <link rel="stylesheet" href="styles/social.css">
+
 </head>
-<body>
+
+<body class="no-transition">
+
     <header>
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
         </nav>
-        <button type="button" role="switch" aria-checked="false" class="ant-switch" id="theme-toggle">
+        <button type="button" role="switch" aria-checked="true" class="ant-switch" id="theme-toggle">
             <div class="ant-switch-handle"></div>
             <span class="ant-switch-inner">
                 <!-- Sun Image for light mode -->
@@ -23,9 +31,7 @@
             </span>
         </button>
     </header>
-    
-    
-    
+
 
     <section id="about" data-aos="fade-up">
         <h2>About Me</h2>
@@ -54,7 +60,28 @@
                     <p class="project-skills">Skills: PCB Design, Circuit Simulation</p>
                 </div>
             </div>
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="elec.jpg" alt="Project 1 Thumbnail">
+                </div>
+                <div class="project-info">
+                    <h4>Project 2</h4>
+                    <p>Designed a power-efficient circuit for IoT devices.</p>
+                    <p class="project-skills">Skills: PCB Design, Circuit Simulation</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="elec.jpg" alt="Project 1 Thumbnail">
+                </div>
+                <div class="project-info">
+                    <h4>Project 3</h4>
+                    <p>Designed a power-efficient circuit for IoT devices.</p>
+                    <p class="project-skills">Skills: PCB Design, Circuit Simulation</p>
+                </div>
+            </div>
         </div>
+        
 
         <!-- Software Projects -->
         <div class="projects-container" id="software-projects">
@@ -95,7 +122,10 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="scripts.js"></script> <!-- Link to external JS -->
+    <script src="scripts/theme-toggle.js" defer></script>
+    <script src="scripts/tab.js" defer></script>
+    <script src="scripts/scroll.js" defer></script>
+
 </body>
 </html>
 

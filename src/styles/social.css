@@ -1,0 +1,56 @@
+/* Social Media Buttons */
+#social-links {
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-button:hover {
+    background-color: #0056b3;
+}
+
+/* Side Pannel */
+.side-panel {
+    position: fixed;
+    top: 65%;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 60px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.side-icon:hover {
+    transform: scale(1.1); /* Enlarge on hover */
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+}
