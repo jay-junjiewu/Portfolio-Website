@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+        </nav>
+        <button type="button" role="switch" aria-checked="false" class="ant-switch" id="theme-toggle">
+            <div class="ant-switch-handle"></div>
+            <span class="ant-switch-inner">
+                <!-- Sun Image for light mode -->
+                <img id="sun-icon" src="icons/sun.svg" alt="Sun" style="width: 20px; height: 20px;">
+                <!-- Moon Image for dark mode -->
+                <img id="moon-icon" src="icons/moon.svg" alt="Moon" style="width: 20px; height: 20px; display: none;">
+            </span>
+        </button>
+    </header>
+    
+    
+    
+
+    <section id="about" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>
+            I am a software engineer specializing in embedded firmware and signal processing. My passion is crafting innovative 
+            solutions and collaborating on impactful projects.
+        </p>
+    </section>
+
+    <section id="projects" data-aos="fade-up">
+        <h2>Projects</h2>
+        <div class="tabs">
+            <div class="tab active" data-target="electrical-projects">Electrical</div>
+            <div class="tab" data-target="software-projects">Software</div>
+        </div>
+
+        <!-- Electrical Projects -->
+        <div class="projects-container active" id="electrical-projects">
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="elec.jpg" alt="Project 1 Thumbnail">
+                </div>
+                <div class="project-info">
+                    <h4>Project 1</h4>
+                    <p>Designed a power-efficient circuit for IoT devices.</p>
+                    <p class="project-skills">Skills: PCB Design, Circuit Simulation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Software Projects -->
+        <div class="projects-container" id="software-projects">
+            <div class="project-card">
+                <div class="project-thumbnail">
+                    <img src="elec.jpg" alt="Project 3 Thumbnail">
+                </div>
+                <div class="project-info">
+                    <h4>Project 3</h4>
+                    <p>Developed an efficient embedded firmware solution for robotics.</p>
+                    <p class="project-skills">Skills: Embedded C, RTOS, ARM Architecture</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Links -->
+    <section id="social-links">
+        <h3>Get in Touch</h3>
+        <div class="social-buttons">
+            <a href="mailto:your-email@example.com" class="social-button">✉️ Email</a>
+            <a href="https://github.com/your-github-username" class="social-button">🐱 GitHub</a>
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" class="social-button">🔗 LinkedIn</a>
+        </div>
+    </section>
+
+    <div class="side-panel">
+        <a href="mailto:your-email@example.com" class="side-icon" title="Email">
+            <img id="email-icon" src="icons/email-black.svg" alt="Email" class="icon">
+        </a>
+        <a href="https://github.com/your-github-username" class="side-icon" title="GitHub">
+            <img id="github-icon" src="icons/github-black.svg" alt="GitHub" class="icon">
+        </a>
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" class="side-icon" title="LinkedIn">
+            <img id="linkedin-icon" src="icons/linkedin-black.svg" alt="LinkedIn" class="icon">
+        </a>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="scripts.js"></script> <!-- Link to external JS -->
+</body>
+</html>
+
+
