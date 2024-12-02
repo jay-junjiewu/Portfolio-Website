@@ -5,6 +5,34 @@ AOS.init({
     once: true,  // Trigger animation only once
 });
 
+
+// Hides header when scrolling down and reveals when scrolled all the way up
+const header = document.querySelector('header'); // Select the header element
+// Function to handle header visibility
+function handleHeaderScroll() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches; // Check if the device is mobile
+
+    if (isMobile) {
+        if (window.scrollY === 0) {
+            // At the top of the page
+            header.classList.remove('hidden');
+        } else {
+            // Scrolled away from the top
+            header.classList.add('hidden');
+        }
+    } else {
+        // Ensure header is always visible in desktop mode
+        header.classList.remove('hidden');
+    }
+}
+// Add scroll listener
+window.addEventListener('scroll', handleHeaderScroll);
+// Run on initial load to set correct state
+handleHeaderScroll();
+
+
+
+
 /*
 // Smooth scrolling for project containers
 containers.forEach(container => {

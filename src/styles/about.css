@@ -4,6 +4,7 @@
     max-width: 1000px;
     margin: 60px auto;
     margin-bottom: 0px;
+    padding-bottom: 0px;
 }
 
 #about h2 {
@@ -19,6 +20,13 @@
     font-size: 1.2rem;
     line-height: 1.8;
     margin-left: 30px;
+    margin-bottom: 0px;
+}
+
+.highlighted-name {
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 2rem;
 }
 
 /* Responsive Design - Mobile Layout */
@@ -27,9 +35,17 @@
         margin: 0 0;
     }
 
+    #about h2 {
+        font-size: 2.3rem;
+    }
+
     #about p {
         font-size: 1rem;
         line-height: 1.8;
         margin-left: 10px;
+    }
+
+    .highlighted-name {
+        font-size: 1.3rem;
     }
 }
