@@ -29,8 +29,15 @@
             <span class="header-text">Home</span>
         </div>
         <nav>
+            <!-- Desktop -->
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+
+            <!-- Mobile -->
+            <button id="menu-toggle" aria-label="Toggle Menu">
+                <img src="icons/hamburger.svg" alt="Menu" class="hamburger-icon" />
+            </button>
+            <div id="menu" class="menu"></div> <!-- Empty menu that will hold links -->
         </nav>
         <button type="button" role="switch" aria-checked="true" class="ant-switch" id="theme-toggle">
             <div class="ant-switch-handle"></div>
@@ -128,17 +135,20 @@
     </section>
     -->
 
-    <div class="side-panel">
-        <a href="mailto:jaywu0045@gmail.com" class="side-icon" title="Email">
-            <img id="email-icon" src="icons/email-black.svg" alt="Email" class="icon">
-        </a>
-        <a href="https://github.com/jay-junjiewu" class="side-icon" title="GitHub" target=”_blank>
-            <img id="github-icon" src="icons/github-black.svg" alt="GitHub" class="icon">
-        </a>
-        <a href="https://www.linkedin.com/in/junjiewujay" class="side-icon" title="LinkedIn" target="_blank">
-            <img id="linkedin-icon" src="icons/linkedin-black.svg" alt="LinkedIn" class="icon">
-        </a>
-    </div>
+    <section id="contact">
+        <div class="side-panel">
+            <a href="mailto:jaywu0045@gmail.com" class="side-icon" title="Email">
+                <img id="email-icon" src="icons/email-black.svg" alt="Email" class="icon">
+            </a>
+            <a href="https://github.com/jay-junjiewu" class="side-icon" title="GitHub" target=”_blank>
+                <img id="github-icon" src="icons/github-black.svg" alt="GitHub" class="icon">
+            </a>
+            <a href="https://www.linkedin.com/in/junjiewujay" class="side-icon" title="LinkedIn" target="_blank">
+                <img id="linkedin-icon" src="icons/linkedin-black.svg" alt="LinkedIn" class="icon">
+            </a>
+        </div>
+    </section>
+   
     
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

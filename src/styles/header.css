@@ -15,44 +15,44 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #0056b3;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
 /* Header in Dark Mode */
 header.dark-mode {
     background-color: rgb(41, 41, 41);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Header Links and Theme Toggle */
+/* Header Text */
+.header-left {
+    display: flex;
+    align-items: center;
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Header Links */
 header nav a {
     text-decoration: none;
     color: #0056b3;
     font-weight: bold;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 20px;
     font-size: 1.2rem;
     transition: color 0.3s ease;
-}
-
-body.dark-mode header nav a {
-    color: #f5f5f5;
 }
 
 header nav a:hover {
     color: #007BFF;
 }
 
+body.dark-mode header nav a {
+    color: #f5f5f5;
+}
+
 body.dark-mode header nav a:hover {
     color: #007BFF;
 }
 
+/* Theme Toggle Button */
 header .theme-toggle {
     cursor: pointer;
     font-size: 1.2rem;
@@ -64,33 +64,125 @@ header .theme-toggle.dark-mode {
     color: #f5f5f5;
 }
 
+#menu-toggle {
+    display: none; /* Hidden by default for desktop */
+}
 
-/* FadeIn Animation */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.menu {
+    display: none;
 }
 
 /* Responsive Design - Mobile Layout */
 @media (max-width: 768px) {
     header {
         padding: 10px 20px;
-        gap: 0px;
+        gap: 0;
         transform: translateY(0);
         transition: transform 0.5s ease;
     }
 
+    /* When the header is hidden, apply the transform */
+    header.hidden {
+        transform: translateY(-100%); /* Hide the header */
+    }
+
     .header-left {
         font-size: 1.2rem;
+        display: none;
     }
 
     header nav a {
         font-size: 0.9rem;
+        display: none; /* Hide navigation links */
     }
+
+    /* Hamburger Button */
+    #menu-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        z-index: 2000; /* Ensure the hamburger button is above other content */
+    }
+
+    /* Dropdown Menu */
+    .menu {
+        display: flex; /* Always display flex so the menu can appear */
+        flex-direction: column;
+        position: absolute;
+        top: 45px;
+        left: 0px;
+        background-color: #f5f5f5;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        border-radius: 8px;
+        width: 100px;
+        max-height: 200px; /* Set a max height to prevent it from getting too tall */
+        z-index: 1000; /* Ensure the menu appears above other content */
+        overflow: hidden; /* Prevent overflow */
+        transform: translateY(-20px); /* Initially position it slightly above */
+        opacity: 0; /* Initially make it invisible */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on right and bottom */
+    }
+
+    /* Dark Mode for Dropdown Menu */
+    body.dark-mode .menu {
+        background-color: rgb(41, 41, 41);
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Lighter shadow for contrast */
+    }
+
+
+    /* Show the menu when active */
+    .menu.active {
+        transform: translateY(0); /* Slide the menu down */
+        opacity: 1; /* Make it visible */
+    }
+
+    .hamburger-icon {
+        transform: translateY(-12px);
+        width: 35px;  /* Set the width of the SVG */
+        transition: transform 0.3s ease;
+    }
+
     
-    header.hidden {
-        transform: translateY(-100%);
-        transition: transform 1s ease;
+    /* Menu Links Styled as Divs */
+    .menu-link {
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: #0056b3;
+        padding: 10px 15px;
+        margin-bottom: 5px;
+        transform: translateX(10px);
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+    /* Dark Mode for Menu Links */
+    body.dark-mode .menu-link {
+        color: #f5f5f5;
+    }
+
+    /* Hover effect for Links */
+    .menu-link:hover {
+        color: #007BFF;
+    }
+
+    /* Dark Mode link hover effect */
+    body.dark-mode .menu-link:hover {
+        color: #007BFF;
+    }
+
 }
+
+
+
+
 
