@@ -35,20 +35,6 @@
     gap: 10px;
 }
 
-/* Side Panel on Mobile (below 768px) */
-@media (max-width: 768px) {
-    .side-panel {
-        position: static;  /* Removes the fixed positioning */
-        top: auto;  /* Not needed, but ensures it doesn't get applied */
-        left: 0;
-        margin-top: 20px;  /* Adds space between the top of the screen and the section */
-        display: flex;
-        flex-direction: row;  /* You can change to row if you want the icons to be side-by-side */
-        gap: 20px;
-        justify-content: center; /* Centers the icons horizontally */
-    }
-}
-
 .side-icon {
     display: flex;
     align-items: center;
@@ -67,4 +53,38 @@
 .icon {
     width: 36px;
     height: 36px;
+}
+
+#contact {
+    text-align: left;
+    max-width: 1000px;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+
+#contact h2 {
+    display: none;
+}
+
+/* Side Panel on Mobile (below 768px) */
+@media (max-width: 768px) {
+    .side-panel {
+        position: static;  /* Removes the fixed positioning */
+        top: auto;  /* Not needed, but ensures it doesn't get applied */
+        left: 0;
+        margin-top: 20px;  /* Adds space between the top of the screen and the section */
+        display: flex;
+        flex-direction: row;  /* You can change to row if you want the icons to be side-by-side */
+        gap: 20px;
+        justify-content: center; /* Centers the icons horizontally */
+    }
+
+    #contact h2 {
+        display: flex;
+        font-size: 2.5rem;
+        margin-bottom: 0px;
+        color:#0056b3;
+    }
 }
