@@ -35,6 +35,11 @@
     border-bottom: 2px solid #0056b3;
 }
 
+.tab:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
 /* Project Container */
 .projects-container {
     display: none;
@@ -70,13 +75,21 @@
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
 }
 
-/* Dark Mode for Project Cards */
 .project-card.dark-mode {
     background: #2c2c2c;
+}
+
+/* Link to new page for Project Cards */
+.project-link {
+    text-decoration: none; 
+    color: inherit;
+    display: block; 
+    width: 100%;
+    height: auto;
 }
 
 /* Thumbnail - Desktop Layout */
