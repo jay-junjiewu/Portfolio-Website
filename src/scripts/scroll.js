@@ -12,7 +12,7 @@ const menu = document.getElementById('menu'); // Select the dropdown menu
 const menuToggle = document.getElementById('menu-toggle'); // Select the hamburger button
 // Function to handle header visibility
 function handleHeaderScroll() {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches; // Check if the device is mobile
+    const isMobile = window.matchMedia('(max-width: 1100px)').matches;
 
     if (isMobile) {
         if (window.scrollY === 0) {
