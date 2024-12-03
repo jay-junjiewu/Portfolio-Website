@@ -5,11 +5,10 @@ AOS.init({
     once: true,  // Trigger animation only once
 });
 
-
-
-const header = document.querySelector('header'); // Select the header element
-const menu = document.getElementById('menu'); // Select the dropdown menu
-const menuToggle = document.getElementById('menu-toggle'); // Select the hamburger button
+// Scrolling hides the header in mobile
+const header = document.querySelector('header'); 
+const menu = document.getElementById('menu');
+const menuToggle = document.getElementById('menu-toggle');
 // Function to handle header visibility
 function handleHeaderScroll() {
     const isMobile = window.matchMedia('(max-width: 1100px)').matches;
@@ -39,9 +38,7 @@ handleHeaderScroll();
 
 
 
-
-
-
+// Dropdown menu for mobile mode
 document.getElementById('menu-toggle').addEventListener('click', () => {
     const menu = document.getElementById('menu');
     

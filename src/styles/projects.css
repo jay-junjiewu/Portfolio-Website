@@ -37,18 +37,18 @@
 
 /* Project Container */
 .projects-container {
-    display: none; /* Hidden by default */
+    display: none;
 }
 
 .projects-container.active {
     display: flex;
     animation: fadeIn 0.5s ease;
-    flex-direction: column; /* Stack project cards vertically */
-    gap: 20px; /* Adds spacing between project cards */
+    flex-direction: column; 
+    gap: 20px;
     max-width: 1200px;
     margin: auto;
-    overflow: visible; /* Removes scrolling */
-    max-height: none; /* No height restriction */
+    overflow: visible;
+    max-height: none;
 }
 
 /* Project Cards - Desktop Layout */

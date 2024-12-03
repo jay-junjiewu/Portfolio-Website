@@ -21,7 +21,7 @@ header.dark-mode {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Header Text */
+/* Header Left Text */
 .header-left {
     display: flex;
     align-items: center;
@@ -30,7 +30,14 @@ header.dark-mode {
     font-size: 1.5rem;
 }
 
-/* Header Links */
+/* Header Navigation Text */
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
 header nav a {
     text-decoration: none;
     color: #0056b3;
@@ -52,6 +59,7 @@ body.dark-mode header nav a:hover {
     color: #007BFF;
 }
 
+
 /* Theme Toggle Button */
 header .theme-toggle {
     cursor: pointer;
@@ -65,7 +73,7 @@ header .theme-toggle.dark-mode {
 }
 
 #menu-toggle {
-    display: none; /* Hidden by default for desktop */
+    display: none;
 }
 
 .menu {
@@ -81,7 +89,6 @@ header .theme-toggle.dark-mode {
         transition: transform 0.5s ease;
     }
 
-    /* When the header is hidden, apply the transform */
     header.hidden {
         transform: translateY(-100%); /* Hide the header */
     }
@@ -92,8 +99,7 @@ header .theme-toggle.dark-mode {
     }
 
     header nav a {
-        font-size: 0.9rem;
-        display: none; /* Hide navigation links */
+        display: none;
     }
 
     /* Hamburger Button */
@@ -107,12 +113,12 @@ header .theme-toggle.dark-mode {
         position: absolute;
         left: 20px;
         top: 20px;
-        z-index: 2000; /* Ensure the hamburger button is above other content */
+        z-index: 2000;
     }
 
     /* Dropdown Menu */
     .menu {
-        display: flex; /* Always display flex so the menu can appear */
+        display: flex;
         flex-direction: column;
         position: absolute;
         top: 45px;
@@ -122,20 +128,18 @@ header .theme-toggle.dark-mode {
         padding: 0;
         border-radius: 8px;
         width: 100px;
-        max-height: 200px; /* Set a max height to prevent it from getting too tall */
-        z-index: 1000; /* Ensure the menu appears above other content */
-        overflow: hidden; /* Prevent overflow */
-        transform: translateY(-20px); /* Initially position it slightly above */
-        opacity: 0; /* Initially make it invisible */
+        max-height: 200px;
+        z-index: 1000;
+        overflow: hidden;
+        transform: translateY(-20px); 
+        opacity: 0; 
         transition: transform 0.3s ease, opacity 0.3s ease;
-
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow on right and bottom */
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1); 
     }
 
-    /* Dark Mode for Dropdown Menu */
     body.dark-mode .menu {
         background-color: rgb(41, 41, 41);
-        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Lighter shadow for contrast */
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     }
 
 
@@ -147,11 +151,10 @@ header .theme-toggle.dark-mode {
 
     .hamburger-icon {
         transform: translateY(-12px);
-        width: 35px;  /* Set the width of the SVG */
+        width: 35px;
         transition: transform 0.3s ease;
     }
 
-    
     /* Menu Links Styled as Divs */
     .menu-link {
         text-decoration: none;
@@ -165,17 +168,14 @@ header .theme-toggle.dark-mode {
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* Dark Mode for Menu Links */
     body.dark-mode .menu-link {
         color: #f5f5f5;
     }
 
-    /* Hover effect for Links */
     .menu-link:hover {
         color: #007BFF;
     }
 
-    /* Dark Mode link hover effect */
     body.dark-mode .menu-link:hover {
         color: #007BFF;
     }
