@@ -5,9 +5,12 @@ AOS.init({
     once: true,  // Trigger animation only once
 });
 
+window.addEventListener('scroll', handleHeaderScroll);
+// Run on initial load to set the correct state
+handleHeaderScroll();
+
 
 // Scrolling hides the header in mobile
-// Function to handle header visibility
 function handleHeaderScroll() {
     const header = document.querySelector('header'); 
     const menu = document.getElementById('menu');
@@ -27,15 +30,11 @@ function handleHeaderScroll() {
         if (isMainPage){
             if (menu.classList.contains('active') && window.scrollY > 0) {
                 menu.classList.remove('active');
-            }
+
             } else {
                 header.classList.remove('hidden');
             }
         }
-
-}
-// Add scroll listener
-window.addEventListener('scroll', handleHeaderScroll);
-// Run on initial load to set the correct state
-handleHeaderScroll();
+    }
+} 
 

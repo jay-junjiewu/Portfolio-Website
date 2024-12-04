@@ -7,6 +7,15 @@ const dotsContainer = document.querySelector('.carousel-dots');
 
 let currentIndex = 0;
 let direction = 'right';
+// Disable transition for initial page load
+carouselSlide.style.transition = 'none';
+
+createDots();
+updateCarouselPosition();
+
+// Event listeners for buttons
+leftButton.addEventListener('click', moveToPrevious);
+rightButton.addEventListener('click', moveToNext);
 
 // Create dots based on the number of images
 function createDots() {
@@ -22,24 +31,10 @@ function createDots() {
     }
 }
 
-function updateCarouselPosition() {
-    images.forEach((img, index) => {
-        img.classList.remove('prev', 'active', 'next'); // Reset classes
-
-        if (index === currentIndex) {
-            img.classList.add('active'); // Current image
-        } else if (index === (currentIndex - 1 + images.length) % images.length) {
-            img.classList.add('prev'); // Previous image
-        } else if (index === (currentIndex + 1) % images.length) {
-            img.classList.add('next'); // Next image
-        }
-    });
-    updateActiveDot();
-}
-
+// Update active image and dots
 function updateActiveImage() {
     images.forEach((img, index) => {
-        img.classList.remove('active'); 
+        img.classList.remove('active');
         if (index === currentIndex) {
             img.classList.add('active');
         }
@@ -57,32 +52,40 @@ function updateActiveDot() {
     });
 }
 
-
 // Navigate to the previous image
 function moveToPrevious() {
     direction = 'left';
-    // Circular navigation
-    currentIndex = (currentIndex - 1 + images.length) % images.length; 
-    updateCarouselPosition(); 
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateCarouselPosition();
 }
 
 // Navigate to the next image
 function moveToNext() {
     direction = 'right';
-    currentIndex = (currentIndex + 1) % images.length; 
-    updateCarouselPosition(); 
+    currentIndex = (currentIndex + 1) % images.length;
+    updateCarouselPosition();
 }
 
-// Event listeners for buttons
-leftButton.addEventListener('click', moveToPrevious);
-rightButton.addEventListener('click', moveToNext);
+// Update carousel position and active image logic
+function updateCarouselPosition() {
+    // Reset all images' classes
+    images.forEach((img, index) => {
+        img.classList.remove('prev', 'active', 'next');
+        
+        if (index === currentIndex) {
+            img.classList.add('active'); // Set current image as active
+        } else if (index === (currentIndex - 1 + images.length) % images.length) {
+            img.classList.add('prev'); // Set previous image
+        } else if (index === (currentIndex + 1) % images.length) {
+            img.classList.add('next'); // Set next image
+        }
+    });
 
+    // Re-enable transition after initial setup
+    setTimeout(() => {
+        carouselSlide.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'; // Re-enable transition
+    }, 50);
 
-// Initialize the carousel initial position and active dot
-createDots();
-updateCarouselPosition();
-
-
-
-
-
+    // Update active dot
+    updateActiveDot();
+}
