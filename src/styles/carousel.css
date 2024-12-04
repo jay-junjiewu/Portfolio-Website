@@ -129,3 +129,10 @@ body.dark-mode .carousel-button.right {
     background-color: #0056b3;
     opacity: 1;
 }
+
+/* Hide buttons on mobile */
+@media (max-width: 1100px) {
+    .carousel-button {
+        display: none;
+    }
+}
