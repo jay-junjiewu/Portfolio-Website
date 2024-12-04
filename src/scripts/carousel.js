@@ -4,6 +4,7 @@ const rightButton = document.querySelector('.carousel-button.right');
 const carouselSlide = document.querySelector('.carousel-slide');
 const images = document.querySelectorAll('.carousel-slide img');
 const dotsContainer = document.querySelector('.carousel-dots');
+const carouselWrapper = document.querySelector('.image-carousel');
 
 let currentIndex = 0;
 let direction = 'right';
@@ -12,10 +13,14 @@ carouselSlide.style.transition = 'none';
 
 createDots();
 updateCarouselPosition();
+adjustCarouselHeight();
 
-// Event listeners for buttons
 leftButton.addEventListener('click', moveToPrevious);
 rightButton.addEventListener('click', moveToNext);
+
+window.addEventListener('resize', adjustCarouselHeight);
+window.addEventListener('load', adjustCarouselHeight);
+
 
 // Create dots based on the number of images
 function createDots() {
@@ -86,6 +91,18 @@ function updateCarouselPosition() {
         carouselSlide.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'; // Re-enable transition
     }, 50);
 
-    // Update active dot
     updateActiveDot();
 }
+
+// Function to dynamically adjust the height of the carousel
+function adjustCarouselHeight() {
+    // Get the current image
+    const activeImage = images[0]; // assuming the first image is active for now
+
+    // Calculate the height based on the image's natural dimensions
+    const aspectRatio = activeImage.naturalWidth / activeImage.naturalHeight;
+    const newHeight = carouselWrapper.clientWidth / aspectRatio;
+
+    carouselWrapper.style.height = `${newHeight}px`;
+}
+

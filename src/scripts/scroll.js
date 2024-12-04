@@ -9,14 +9,13 @@ window.addEventListener('scroll', handleHeaderScroll);
 // Run on initial load to set the correct state
 handleHeaderScroll();
 
-
 // Scrolling hides the header in mobile
 function handleHeaderScroll() {
     const header = document.querySelector('header'); 
     const menu = document.getElementById('menu');
     const isMobile = window.matchMedia('(max-width: 1100px)').matches;
     const isMainPage = window.location.pathname.endsWith('index.html');
-
+    
     if (isMobile) {
         if (window.scrollY === 0) {
             // At the top of the page, reveal header
@@ -27,13 +26,8 @@ function handleHeaderScroll() {
         }
 
         // If menu is open and user scrolls down, close the menu
-        if (isMainPage){
-            if (menu.classList.contains('active') && window.scrollY > 0) {
-                menu.classList.remove('active');
-
-            } else {
-                header.classList.remove('hidden');
-            }
+        if (isMainPage && menu.classList.contains('active') && window.scrollY > 0){
+            menu.classList.remove('active');
         }
     }
 } 
