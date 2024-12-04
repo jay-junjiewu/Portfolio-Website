@@ -1,0 +1,145 @@
+/* Individual Projects Subpage */
+#project-page {
+    padding: 50px 20px;
+    text-align: left;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+
+/* Carousel Wrapper */
+.image-carousel {
+    position: relative;
+    width: 100%; /* Full width of the parent */
+    max-width: 600px; /* Optional: maximum width constraint */
+    margin: 20px auto;
+    overflow: hidden; /* Hide overflowing images */
+    height: 400px; /* Set a fixed height for the carousel */
+}
+
+/* Carousel Slide */
+.carousel-slide {
+    display: flex; /* Arrange images in a row */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Match parent's height */
+    width: calc(100% * var(--image-count)); /* Dynamically adjust width based on number of images */
+    align-items: center; /* Center the images vertically */
+}
+
+
+
+
+
+/* Carousel Wrapper */
+.image-carousel {
+    position: relative;
+    width: 100%; /* Full width of the parent */
+    max-width: 600px; /* Optional: maximum width constraint */
+    margin: 20px auto;
+    overflow: hidden; /* Hide overflowing images */
+    display: flex; /* Align children (carousel-slide) properly */
+    justify-content: center; /* Center content */
+    border-radius: 15px; /* Apply rounded corners */
+}
+
+/* Carousel Slide */
+.carousel-slide {
+    position: relative; /* Keep the images inside positioned relative to this container */
+    width: 100%; /* Full width */
+    height: 100%; /* Match the parent's height */
+    display: flex; /* Flex container */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual Images */
+.carousel-slide img {
+    position: absolute; /* Stack images on top of each other */
+    height: 100%; /* Ensure the image matches the height of the carousel */
+    width: auto; /* Let the image width adjust based on the aspect ratio */    object-fit: contain; /* Maintain the image's aspect ratio */
+    opacity: 0; /* Make images hidden by default */
+    transition: opacity 0.5s ease-in-out; /* Smooth opacity transition */
+}
+
+/* Show the active image */
+.carousel-slide img.active {
+    opacity: 1; /* Only the active image will be visible */
+}
+
+
+
+
+
+
+/* Carousel Button */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5); /* Default color for dark mode */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 30px; /* Set width for circular button */
+    height: 30px; /* Set height equal to width to ensure it's circular */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the content (e.g., arrow) inside the circle */
+    z-index: 10;
+    border-radius: 50%; /* Make the button circular */
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Position for left and right buttons */
+.carousel-button.left {
+    left: 1%;
+}
+
+.carousel-button.right {
+    right: 1%;
+}
+
+/* Hover effect */
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-mode .carousel-button.left {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+body.dark-mode .carousel-button.right {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+}
+
+
+
+/* Dots styling */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    position: relative;
+}
+
+.carousel-dots .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: gray;
+    opacity: 0.7;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Active dot styling */
+.carousel-dots .carousel-dot.active {
+    background-color: #0056b3;
+    opacity: 1;
+}

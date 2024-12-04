@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junjie Wu</title>
+    <title> Project-s1</title>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../styles/projects.css">
     <link rel="stylesheet" href="../styles/projects-page.css">
     <link rel="stylesheet" href="../styles/scroll.css">
+    <link rel="stylesheet" href="../styles/carousel.css">
 
 </head>
 
@@ -42,17 +43,37 @@
     </header>
 
 
-    <section id="about">
-        <h2>"Hello World!"</h2>
+    <section id="project-page">
+        <h2>Project-s1</h2>
         <p>
-            I am <span class="highlighted-name">Junjie Wu</span>, and I am struggling to make this website. Web development is a pain... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum nibh id nulla feugiat sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla dictum consectetur molestie. Praesent consectetur, mi eget ultrices maximus, metus turpis fringilla ex, ac aliquam ante sapien eget ex. Integer placerat dignissim erat et accumsan. Praesent ornare elit ex, at condimentum velit consectetur et. Nam nisi leo, auctor eu lorem quis, luctus fermentum tortor. Mauris tincidunt sagittis aliquam
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum nibh id nulla feugiat sollicitudin. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla dictum consectetur molestie. Praesent consectetur, mi eget ultrices maximus, metus turpis fringilla ex, ac aliquam ante sapien eget ex. Integer placerat dignissim erat et accumsan. Praesent ornare elit ex, at condimentum velit consectetur et. Nam nisi leo, auctor eu lorem quis, luctus fermentum tortor. Mauris tincidunt sagittis aliquam
         </p>
+        <div class="image-carousel">
+            <div class="carousel-slide">
+                <img src="../elec.jpg" alt="Image 1">
+                <img src="../elec.jpg" alt="Image 2">
+                <img src="../icons/github-white.svg" alt="Image 3">
+            </div>
+
+            <button class="carousel-button left" aria-label="Previous Image">&#10094;</button>
+            <button class="carousel-button right" aria-label="Next Image">&#10095;</button>
+        
+        </div>
+
+         <!-- Dots for image navigation -->
+         <div class="carousel-dots">
+            <!-- Dots will be dynamically added here -->
+        </div>
+        
     </section>
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../scripts/theme-toggle.js" defer></script>
     <script src="../scripts/scroll.js" defer></script>
     <script src="../scripts/back.js" defer></script>
+    <script src="../scripts/carousel.js" defer></script>
 
 </body>
 </html>
