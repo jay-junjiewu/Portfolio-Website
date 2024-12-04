@@ -6,7 +6,7 @@ header {
     width: 100%;
     background-color: #f5f5f5;
     z-index: 1000;
-    padding: 20px 30px;
+    padding: 8px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -152,7 +152,7 @@ header .theme-toggle.dark-mode {
     }
 
     .hamburger-icon {
-        transform: translateY(-12px);
+        transform: translateY(-14px);
         width: 35px;
         transition: transform 0.3s ease;
     }

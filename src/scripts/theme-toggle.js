@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.setAttribute('aria-checked', 'true');
         document.getElementById('sun-icon').style.display = 'none';
         document.getElementById('moon-icon').style.display = 'inline';
-        document.querySelector('.ant-switch-handle').style.transform = 'translateX(30px)';
+        document.querySelector('.ant-switch-handle').style.transform = 'translateX(26px)';
     } else {
         document.body.classList.remove('dark-mode');
         const header = document.querySelector('header');
@@ -52,7 +52,7 @@ themeToggle.addEventListener('click', () => {
     moonIcon.style.display = isDarkMode ? 'inline' : 'none';
 
     // Move the handle left or right based on the mode
-    handle.style.transform = isDarkMode ? 'translateX(30px)' : 'translateX(0)';
+    handle.style.transform = isDarkMode ? 'translateX(26px)' : 'translateX(0)';
 
     // Save the theme preference in localStorage
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
