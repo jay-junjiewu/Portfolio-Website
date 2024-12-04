@@ -5,13 +5,13 @@ const carouselSlide = document.querySelector('.carousel-slide');
 const images = document.querySelectorAll('.carousel-slide img');
 const dotsContainer = document.querySelector('.carousel-dots');
 
-// Set initial position to 0 (first image)
 let currentIndex = 0;
+let direction = 'right';
 
 // Create dots based on the number of images
 function createDots() {
     for (let i = 0; i < images.length; i++) {
-        const dot = document.createElement('div'); // Create div instead of span
+        const dot = document.createElement('div');
         dot.classList.add('carousel-dot');
         dot.addEventListener('click', () => {
             currentIndex = i;
@@ -22,20 +22,30 @@ function createDots() {
     }
 }
 
-// Function to update the visibility of the images
 function updateCarouselPosition() {
     images.forEach((img, index) => {
-        img.style.opacity = (index === currentIndex) ? 1 : 0; // Show current image, hide others
+        img.classList.remove('prev', 'active', 'next'); // Reset classes
+
+        if (index === currentIndex) {
+            img.classList.add('active'); // Current image
+        } else if (index === (currentIndex - 1 + images.length) % images.length) {
+            img.classList.add('prev'); // Previous image
+        } else if (index === (currentIndex + 1) % images.length) {
+            img.classList.add('next'); // Next image
+        }
     });
-
-    // Update the height of the carousel based on the current image's height
-    const currentImage = images[currentIndex];
-    document.querySelector('.image-carousel').style.height = `${currentImage.height}px`;
-
-    updateActiveDot(); // Update active dot
+    updateActiveDot();
 }
 
-// Update the active dot
+function updateActiveImage() {
+    images.forEach((img, index) => {
+        img.classList.remove('active'); 
+        if (index === currentIndex) {
+            img.classList.add('active');
+        }
+    });
+}
+
 function updateActiveDot() {
     const dots = document.querySelectorAll('.carousel-dot');
     dots.forEach((dot, index) => {
@@ -47,26 +57,30 @@ function updateActiveDot() {
     });
 }
 
-// Left button click event
-leftButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--; // Move to previous image
-        updateCarouselPosition();
-    }
-});
 
-// Right button click event
-rightButton.addEventListener('click', () => {
-    if (currentIndex < images.length - 1) {
-        currentIndex++; // Move to next image
-        updateCarouselPosition();
-    }
-});
+// Navigate to the previous image
+function moveToPrevious() {
+    direction = 'left';
+    // Circular navigation
+    currentIndex = (currentIndex - 1 + images.length) % images.length; 
+    updateCarouselPosition(); 
+}
 
-// Initialize the carousel
+// Navigate to the next image
+function moveToNext() {
+    direction = 'right';
+    currentIndex = (currentIndex + 1) % images.length; 
+    updateCarouselPosition(); 
+}
+
+// Event listeners for buttons
+leftButton.addEventListener('click', moveToPrevious);
+rightButton.addEventListener('click', moveToNext);
+
+
+// Initialize the carousel initial position and active dot
 createDots();
-updateCarouselPosition(); // Set the initial position and active dot
-
+updateCarouselPosition();
 
 
 
