@@ -43,9 +43,22 @@
     margin-left: 0px;
 }
 
-#project-page p {
+#project-page h3 {
+    font-weight: bold;
+    color:#0056b3;
+    font-size: 1.3rem;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.ps2-list {
+    margin-left: 20px;
+}
+
+#project-page p {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Centered image and hover container */
@@ -66,6 +79,14 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%; /* Ensures the image doesn't exceed the container width */
     max-width: 500px; /* Limits the image size */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Makes the image block-level to center properly */
+}
+.image-ps2-1 {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensures the image doesn't exceed the container width */
+    max-width: 400px; /* Limits the image size */
     height: auto; /* Maintains aspect ratio */
     display: block; /* Makes the image block-level to center properly */
 }
@@ -96,7 +117,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
