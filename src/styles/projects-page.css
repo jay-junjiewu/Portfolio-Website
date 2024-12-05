@@ -82,10 +82,22 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Hover effect to show text */
-
 .hover-container:hover .hover-text {
-    opacity: 1; /* Show hover text when hovered and image is active */
+    opacity: 1;
+}
+
+/* pdf files link */
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 60px 0px;
+}
+
+.pdf-link {
+    color: #0056b3;
+    font-size: 1.3rem;
 }
 
 
