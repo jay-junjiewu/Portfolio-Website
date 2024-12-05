@@ -43,6 +43,10 @@
     margin-left: 0px;
 }
 
+#project-page p {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
 
 /* Centered image and hover container */
 .hover-container {
