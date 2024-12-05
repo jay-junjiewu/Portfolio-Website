@@ -43,6 +43,52 @@
     margin-left: 0px;
 }
 
+
+/* Centered image and hover container */
+.hover-container {
+    position: relative;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the container */
+    align-items: center; /* Vertically center the content */
+    width: 100%; /* Ensures container takes full width */
+    margin: 20px auto; /* Centers the entire container */
+    height: 100%;
+    z-index: 10;
+}
+
+/* Styling for individual images */
+.image-pe1-1 {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensures the image doesn't exceed the container width */
+    max-width: 500px; /* Limits the image size */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Makes the image block-level to center properly */
+}
+
+/* Hover text styling */
+.hover-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover effect to show text */
+
+.hover-container:hover .hover-text {
+    opacity: 1; /* Show hover text when hovered and image is active */
+}
+
+
 /* Responsive Design - Mobile Layout */
 @media (max-width: 1100px) {
     .back-button {

@@ -7,7 +7,6 @@ const dotsContainer = document.querySelector('.carousel-dots');
 const carouselWrapper = document.querySelector('.image-carousel');
 
 let currentIndex = 0;
-let direction = 'right';
 // Disable transition for initial page load
 carouselSlide.style.transition = 'none';
 
@@ -36,16 +35,6 @@ function createDots() {
     }
 }
 
-// Update active image and dots
-function updateActiveImage() {
-    images.forEach((img, index) => {
-        img.classList.remove('active');
-        if (index === currentIndex) {
-            img.classList.add('active');
-        }
-    });
-}
-
 function updateActiveDot() {
     const dots = document.querySelectorAll('.carousel-dot');
     dots.forEach((dot, index) => {
@@ -57,42 +46,54 @@ function updateActiveDot() {
     });
 }
 
+// Update active image and dots
+function updateActiveImage() {
+    images.forEach((img, index) => {
+        img.classList.remove('active');
+        if (index === currentIndex) {
+            img.classList.add('active');
+        }
+    });
+}
+
 // Navigate to the previous image
 function moveToPrevious() {
-    direction = 'left';
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     updateCarouselPosition();
 }
 
 // Navigate to the next image
 function moveToNext() {
-    direction = 'right';
     currentIndex = (currentIndex + 1) % images.length;
     updateCarouselPosition();
 }
 
-// Update carousel position and active image logic
 function updateCarouselPosition() {
     // Reset all images' classes
-    images.forEach((img, index) => {
+    images.forEach((img) => {
         img.classList.remove('prev', 'active', 'next');
-        
-        if (index === currentIndex) {
-            img.classList.add('active'); // Set current image as active
-        } else if (index === (currentIndex - 1 + images.length) % images.length) {
-            img.classList.add('prev'); // Set previous image
-        } else if (index === (currentIndex + 1) % images.length) {
-            img.classList.add('next'); // Set next image
-        }
     });
 
-    // Re-enable transition after initial setup
-    setTimeout(() => {
-        carouselSlide.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out'; // Re-enable transition
-    }, 50);
+    if (images.length === 2) {
+        // Special handling for 2 images
+        images[currentIndex].classList.add('active');
+        images[(currentIndex + 1) % images.length].classList.add('prev');
+    } else {
+        // General case for 3 or more images
+        images.forEach((img, index) => {
+            if (index === currentIndex) {
+                img.classList.add('active'); // Set current image as active
+            } else if (index === (currentIndex - 1 + images.length) % images.length) {
+                img.classList.add('prev'); // Set previous image
+            } else if (index === (currentIndex + 1) % images.length) {
+                img.classList.add('next'); // Set next image
+            }
+        });
+    }
 
     updateActiveDot();
 }
+
 
 // Function to dynamically adjust the height of the carousel
 function adjustCarouselHeight() {

@@ -1,6 +1,7 @@
 // Set default to dark mode on page load based on localStorage
 document.addEventListener('DOMContentLoaded', () => {
     const isDarkMode = localStorage.getItem('theme') === 'dark';
+    const isMainPage = window.location.pathname.endsWith('index.html');
 
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
@@ -29,15 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('moon-icon').style.display = 'none';
         document.querySelector('.ant-switch-handle').style.transform = 'translateX(0)';
     }
-    
-    // Update icons based on the theme
-    const emailIcon = document.getElementById('email-icon');
-    const githubIcon = document.getElementById('github-icon');
-    const linkedinIcon = document.getElementById('linkedin-icon');
-    
-    emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
-    githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
-    linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
+
+    if (isMainPage) {
+        // Update icons based on the theme
+        const emailIcon = document.getElementById('email-icon');
+        const githubIcon = document.getElementById('github-icon');
+        const linkedinIcon = document.getElementById('linkedin-icon');
+        
+        emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
+        githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
+        linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
+    }
 });
 
 // Dark Mode Toggle
@@ -49,6 +52,7 @@ const handle = document.querySelector('.ant-switch-handle');
 themeToggle.addEventListener('click', () => {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     const header = document.querySelector('header');
+    const isMainPage = window.location.pathname.endsWith('index.html');
 
     const htmlElement = document.documentElement;    
     if (!isDarkMode) {
@@ -78,12 +82,14 @@ themeToggle.addEventListener('click', () => {
     // Save the theme preference in localStorage
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 
-    // Update icons based on the theme
-    const emailIcon = document.getElementById('email-icon');
-    const githubIcon = document.getElementById('github-icon');
-    const linkedinIcon = document.getElementById('linkedin-icon');
-    
-    emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
-    githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
-    linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
+    if (isMainPage) {
+        // Update icons based on the theme
+        const emailIcon = document.getElementById('email-icon');
+        const githubIcon = document.getElementById('github-icon');
+        const linkedinIcon = document.getElementById('linkedin-icon');
+        
+        emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
+        githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
+        linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
+    }
 });

@@ -35,8 +35,7 @@
 
 /* Individual Images */
 .carousel-slide img {
-    max-height: 100%;
-    width: auto;
+    width: 100%;
     object-fit: contain;
     flex-shrink: 0;
     position: absolute;
