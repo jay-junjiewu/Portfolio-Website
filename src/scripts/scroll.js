@@ -14,7 +14,7 @@ function handleHeaderScroll() {
     const header = document.querySelector('header'); 
     const menu = document.getElementById('menu');
     const isMobile = window.matchMedia('(max-width: 1100px)').matches;
-    const isMainPage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+    const isMainPage = window.location.pathname === '/Portfolio-Website/src/' || window.location.pathname.endsWith('index.html');
 
     
     if (isMobile) {
