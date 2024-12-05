@@ -1,7 +1,8 @@
 // Set default to dark mode on page load based on localStorage
 document.addEventListener('DOMContentLoaded', () => {
     const isDarkMode = localStorage.getItem('theme') === 'dark';
-    const isMainPage = window.location.pathname.endsWith('index.html');
+    const isMainPage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+
 
     if (isDarkMode) {
         document.body.classList.add('dark-mode');
@@ -52,7 +53,8 @@ const handle = document.querySelector('.ant-switch-handle');
 themeToggle.addEventListener('click', () => {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     const header = document.querySelector('header');
-    const isMainPage = window.location.pathname.endsWith('index.html');
+    const isMainPage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
+
 
     const htmlElement = document.documentElement;    
     if (!isDarkMode) {
