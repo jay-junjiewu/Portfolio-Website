@@ -1,7 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-theme">
 
 <head>
+    <script>
+        // Set the correct theme class before the page renders
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.replace('no-theme', 'dark-mode');
+        } else {
+            document.documentElement.classList.remove('no-theme');
+        }
+    </script>
+    <style>
+        /* Hide the page until the theme is determined */
+        html.no-theme {
+            visibility: hidden;
+        }
+    </style>
+
+    <link rel="preload" href="../styles/global.css" as="style">    
+    <link rel="preload" href="../styles/header.css" as="style">  
+    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Project-s1</title>
@@ -21,7 +40,7 @@
     <link rel="stylesheet" href="../styles/carousel.css">
 </head>
 
-<body class="no-transition">
+<body>
 
     <header>
         <div class="back-button">

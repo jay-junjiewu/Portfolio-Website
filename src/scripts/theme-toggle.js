@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('moon-icon').style.display = 'none';
         document.querySelector('.ant-switch-handle').style.transform = 'translateX(0)';
     }
+    
+    // Update icons based on the theme
+    const emailIcon = document.getElementById('email-icon');
+    const githubIcon = document.getElementById('github-icon');
+    const linkedinIcon = document.getElementById('linkedin-icon');
+    
+    emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
+    githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
+    linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
 });
 
 // Dark Mode Toggle
@@ -40,6 +49,18 @@ const handle = document.querySelector('.ant-switch-handle');
 themeToggle.addEventListener('click', () => {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     const header = document.querySelector('header');
+
+    const htmlElement = document.documentElement;    
+    if (!isDarkMode) {
+        // Switch to light mode
+        htmlElement.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+    } else {
+        // Switch to dark mode
+        htmlElement.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    }
+
     header.classList.toggle('dark-mode');
     document.querySelectorAll('.project-card').forEach(card => card.classList.toggle('dark-mode'));
     document.querySelectorAll('.side-icon').forEach(icon => icon.classList.toggle('dark-mode'));

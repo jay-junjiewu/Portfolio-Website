@@ -16,7 +16,7 @@ body {
 }
 
 /* Dark Mode - Default */
-body.dark-mode {
+html.dark-mode body {
     background-color: #1a1a1a;
     color: #f5f5f5;
 }
