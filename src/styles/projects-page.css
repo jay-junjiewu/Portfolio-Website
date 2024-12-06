@@ -43,6 +43,10 @@
     margin-left: 0px;
 }
 
+html.dark-mode #project-page h2 {
+    color:#34aefa;
+}
+
 #project-page h3 {
     font-weight: bold;
     color:#0056b3;
@@ -50,6 +54,10 @@
     margin-top: 20px;
     margin-bottom: 0px;
     margin-left: 0px;
+}
+
+html.dark-mode #project-page h3 {
+    color:#34aefa;
 }
 
 .ps2-list {
@@ -124,6 +132,18 @@
 .pdf-link {
     color: #0056b3;
     font-size: 1.3rem;
+}
+
+html.dark-mode .pdf-link {
+    color:#34aefa;
+}
+
+.text-link {
+    color: #0056b3;
+}
+
+html.dark-mode .text-link {
+    color:#34aefa;
 }
 
 

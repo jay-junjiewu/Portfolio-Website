@@ -16,6 +16,10 @@
     margin-left: 0px;
 }
 
+html.dark-mode #about h2 {
+    color:#34aefa;
+}
+
 #about p {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -27,6 +31,10 @@
     color: #0056b3;
     font-weight: bold;
     font-size: 2rem;
+}
+
+html.dark-mode .highlighted-name {
+    color:#34aefa;
 }
 
 /* Responsive Design - Mobile Layout */

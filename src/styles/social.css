@@ -67,4 +67,8 @@
         margin-bottom: 0px;
         color:#0056b3;
     }
+
+    html.dark-mode #contact h2 {
+        color: #34aefa;
+    }
 }

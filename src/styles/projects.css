@@ -12,6 +12,10 @@
     color:#0056b3;
 }
 
+html.dark-mode #projects h2 {
+    color:#34aefa;
+}
+
 /* Tabs */
 .tabs {
     display: flex;
@@ -30,9 +34,16 @@
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
+html.dark-mode .tab {
+    color: #34aefa;
+}
+
 .tab.active {
-    color: #0056b3;
     border-bottom: 2px solid #0056b3;
+}
+
+html.dark-mode .tab.active {
+    border-bottom: 2px solid #34aefa;
 }
 
 .tab:hover {

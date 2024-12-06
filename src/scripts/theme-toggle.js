@@ -33,14 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (isMainPage) {
-        // Update icons based on the theme
+        // Main Page
         const emailIcon = document.getElementById('email-icon');
         const githubIcon = document.getElementById('github-icon');
         const linkedinIcon = document.getElementById('linkedin-icon');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
         
         emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
         githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
         linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
+        hamburgerIcon.src = isDarkMode ? 'icons/hamburger-light.svg' : 'icons/hamburger-dark.svg';
+    } else {
+        // Project page
+        const backIcon = document.getElementById('back-icon');
+        
+        backIcon.src = isDarkMode ? '../icons/back-light.svg' : '../icons/back-dark.svg';
     }
 });
 
@@ -85,13 +92,20 @@ themeToggle.addEventListener('click', () => {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 
     if (isMainPage) {
-        // Update icons based on the theme
+        // Main Page
         const emailIcon = document.getElementById('email-icon');
         const githubIcon = document.getElementById('github-icon');
         const linkedinIcon = document.getElementById('linkedin-icon');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
         
         emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
         githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
         linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
+        hamburgerIcon.src = isDarkMode ? 'icons/hamburger-light.svg' : 'icons/hamburger-dark.svg';
+    } else {
+        // Project page
+        const backIcon = document.getElementById('back-icon');
+        
+        backIcon.src = isDarkMode ? '../icons/back-light.svg' : '../icons/back-dark.svg';
     }
 });
