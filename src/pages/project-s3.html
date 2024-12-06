@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="no-theme">
+
+<head>
+    <script>
+        // Set the correct theme class before the page renders
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.replace('no-theme', 'dark-mode');
+        } else {
+            document.documentElement.classList.remove('no-theme');
+        }
+    </script>
+    <style>
+        /* Hide the page until the theme is determined */
+        html.no-theme {
+            visibility: hidden;
+        }
+    </style>
+
+    <link rel="preload" href="../styles/global.css" as="style">    
+    <link rel="preload" href="../styles/header.css" as="style">  
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Band Audio Equaliser</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/toggle-switch.css">
+    <link rel="stylesheet" href="../styles/projects.css">
+    <link rel="stylesheet" href="../styles/projects-page.css">
+    <link rel="stylesheet" href="../styles/scroll.css">
+    <link rel="stylesheet" href="../styles/carousel.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="back-button">
+            <button id="back" aria-label="Back Button">
+                <img id="back-icon" src="../icons/back-dark.svg" alt="Back" class="back-icon" />
+            </button>
+        </div>
+        
+        <button type="button" role="switch" aria-checked="true" class="ant-switch" id="theme-toggle">
+            <div class="ant-switch-handle"></div>
+            <span class="ant-switch-inner">
+                <!-- Sun Image for light mode -->
+                <img id="sun-icon" src="../icons/sun.svg" alt="Sun" style="width: 20px; height: 20px;">
+                <!-- Moon Image for dark mode -->
+                <img id="moon-icon" src="../icons/moon.svg" alt="Moon" style="width: 20px; height: 20px; display: none;">
+            </span>
+        </button>
+    </header>
+
+
+    <section id="project-page">
+        <h2>5 Band Audio Equaliser</h2>
+
+        <p>I built a 5-band audio equalizer project using MATLAB, allowing real-time digital signal processing of audio frequencies. The equalizer is designed to provide users with the ability to manipulate the gain of five distinct frequency bands, offering a customisable audio experience.</p>
+
+        <h3>Filter Design</h3>
+
+        <p>The equalizer uses digital bandpass filters that are logarithmically spaced to align with the sensitivity of human hearing, ensuring a natural and intuitive audio adjustment experience. These filters were designed and implemented using MATLAB's DSP capabilities, allowing precise tuning of filter coefficients to effectively isolate and process specific frequency bands for optimal sound quality and performance.</p>
+
+        <div class="hover-container">
+            <img src="../assets/project-s3/filters.png" class="image-ps2-1" />
+        </div>
+
+        <h3>Operating Principle</h3>
+
+        <p>The gain adjustment is controlled via sliders that dynamically update the filter parameters, directly influencing the time-domain signal. These adjustments span a wide range of gain levels, from subtle to significant, which can be observed in the time graph. To ensure smooth processing, a sliding window buffer is used to handle real-time audio data, continuously updating the signal as the sliders are adjusted. This buffer allows for efficient management of the audio stream, ensuring that the filter coefficients are recalculated in real-time. Updates to the frequency response and spectrogram occur in real-time, with minimal latency, providing seamless transitions and a smooth audio experience as the frequency spectrum is adjusted.</p>
+
+        <div class="image-carousel">
+            <div class="carousel-slide">
+                <img src="../assets/project-s3/frequency.png">
+                <img src="../assets/project-s3/spectogram.png">
+                <img src="../assets/project-s3/time.png">
+            </div>
+
+            <button class="carousel-button left" aria-label="Previous Image">&#10094;</button>
+            <button class="carousel-button right" aria-label="Next Image">&#10095;</button>
+        </div>
+        <div class="carousel-dots">
+            <!-- Dots will be dynamically added here -->
+        </div>
+
+        <p>
+            If you would like access to the MATLAB source code or the calculations behind the filter design, please feel free to contact me.
+        </p>        
+        
+    </section>
+
+    
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../scripts/theme-toggle.js" defer></script>
+    <script src="../scripts/scroll.js" defer></script>
+    <script src="../scripts/back.js" defer></script>
+    <script src="../scripts/carousel.js" defer></script>
+    <script src="../scripts/swipe.js" defer></script>
+
+</body>
+</html>
+
+
