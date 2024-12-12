@@ -17,8 +17,8 @@
         }
     </style>
 
-    <link rel="preload" href="styles/global.css" as="style">
-    <link rel="preload" href="styles/header.css" as="style">
+    <link rel="preload" href="src/styles/global.css" as="style">
+    <link rel="preload" href="src/styles/header.css" as="style">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,13 +30,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/toggle-switch.css">
-    <link rel="stylesheet" href="styles/about.css">
-    <link rel="stylesheet" href="styles/projects.css">
-    <link rel="stylesheet" href="styles/social.css">
-    <link rel="stylesheet" href="styles/scroll.css">
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/header.css">
+    <link rel="stylesheet" href="src/styles/toggle-switch.css">
+    <link rel="stylesheet" href="src/styles/about.css">
+    <link rel="stylesheet" href="src/styles/projects.css">
+    <link rel="stylesheet" href="src/styles/social.css">
+    <link rel="stylesheet" href="src/styles/scroll.css">
 
 
 </head>
@@ -54,7 +54,7 @@
 
             <!-- Mobile -->
             <button id="menu-toggle" aria-label="Toggle Menu">
-                <img id="hamburger-icon" src="icons/hamburger-dark.svg" alt="Menu" class="hamburger-icon">
+                <img id="hamburger-icon" src="src/icons/hamburger-dark.svg" alt="Menu" class="hamburger-icon">
             </button>
             <div id="menu" class="menu"></div> <!-- Empty menu that will hold links -->
         </nav>
@@ -62,9 +62,9 @@
             <div class="ant-switch-handle"></div>
             <span class="ant-switch-inner">
                 <!-- Sun Image for light mode -->
-                <img id="sun-icon" src="icons/sun.svg" alt="Sun" style="width: 20px; height: 20px;">
+                <img id="sun-icon" src="src/icons/sun.svg" alt="Sun" style="width: 20px; height: 20px;">
                 <!-- Moon Image for dark mode -->
-                <img id="moon-icon" src="icons/moon.svg" alt="Moon" style="width: 20px; height: 20px; display: none;">
+                <img id="moon-icon" src="src/icons/moon.svg" alt="Moon" style="width: 20px; height: 20px; display: none;">
             </span>
         </button>
     </header>
@@ -91,10 +91,10 @@
         <!-- Electrical Projects -->
         <div class="projects-container active" id="electrical-projects">
 
-            <a href="pages/project-e1.html" class="project-link">
+            <a href="src/pages/project-e1.html" class="project-link">
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="assets/project-e1/3D1.png" alt="Project E1 Thumbnail">
+                        <img src="src/assets/project-e1/3D1.png" alt="Project E1 Thumbnail">
                     </div>
                     <div class="project-info">
                         <h4>Guitar Power Amplifier</h4>
@@ -109,10 +109,10 @@
                 </div>
             </a>
 
-            <a href="pages/project-e2.html" class="project-link">
+            <a href="src/pages/project-e2.html" class="project-link">
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="assets/project-e2/SR7.jpg" alt="Project E2 Thumbnail">
+                        <img src="src/assets/project-e2/SR7.jpg" alt="Project E2 Thumbnail">
                     </div>
                     <div class="project-info">
                         <h4>Sunswift Racing: MPPT Project</h4>
@@ -146,10 +146,10 @@
                 </div>
             </a>
 
-            <a href="pages/project-s2.html" class="project-link">
+            <a href="src/pages/project-s2.html" class="project-link">
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="assets/project-s2/3d.png" alt="Project S2 Thumbnail">
+                        <img src="src/assets/project-s2/3d.png" alt="Project S2 Thumbnail">
                     </div>
                     <div class="project-info">
                         <h4>Ambient Sound Monitor System</h4>
@@ -164,10 +164,10 @@
                 </div>
             </a>
 
-            <a href="pages/project-s3.html" class="project-link">
+            <a href="src/pages/project-s3.html" class="project-link">
                 <div class="project-card">
                     <div class="project-thumbnail">
-                        <img src="assets/project-s3/spectogram.png" alt="Project S3 Thumbnail">
+                        <img src="src/assets/project-s3/spectogram.png" alt="Project S3 Thumbnail">
                     </div>
                     <div class="project-info">
                         <h4>5 Band Audio Equaliser</h4>
@@ -188,13 +188,13 @@
         <h2>Contact</h2>
         <div class="side-panel">
             <a href="mailto:jaywu0045@gmail.com" class="side-icon" title="Email">
-                <img id="email-icon" src="icons/email-black.svg" alt="Email" class="icon">
+                <img id="email-icon" src="src/icons/email-black.svg" alt="Email" class="icon">
             </a>
             <a href="https://github.com/jay-junjiewu" class="side-icon" title="GitHub" target=”_blank>
-                <img id="github-icon" src="icons/github-black.svg" alt="GitHub" class="icon">
+                <img id="github-icon" src="src/icons/github-black.svg" alt="GitHub" class="icon">
             </a>
             <a href="https://www.linkedin.com/in/junjiewujay" class="side-icon" title="LinkedIn" target="_blank">
-                <img id="linkedin-icon" src="icons/linkedin-black.svg" alt="LinkedIn" class="icon">
+                <img id="linkedin-icon" src="src/icons/linkedin-black.svg" alt="LinkedIn" class="icon">
             </a>
         </div>
     </section>
@@ -204,10 +204,10 @@
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="scripts/theme-toggle.js" defer></script>
-    <script src="scripts/tab.js" defer></script>
-    <script src="scripts/menu.js" defer></script>
-    <script src="scripts/scroll.js" defer></script>
+    <script src="src/scripts/theme-toggle.js" defer></script>
+    <script src="src/scripts/tab.js" defer></script>
+    <script src="src/scripts/menu.js" defer></script>
+    <script src="src/scripts/scroll.js" defer></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 // Set default to dark mode on page load based on localStorage
 document.addEventListener('DOMContentLoaded', () => {
     const isDarkMode = localStorage.getItem('theme') === 'dark';
-    const isMainPage = window.location.pathname === '/Portfolio-Website/src/' || window.location.pathname.endsWith('index.html');
+    const isMainPage = window.location.pathname === '/Portfolio-Website/' || window.location.pathname.endsWith('index.html');
 
 
     if (isDarkMode) {
@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const linkedinIcon = document.getElementById('linkedin-icon');
         const hamburgerIcon = document.getElementById('hamburger-icon');
         
-        emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
-        githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
-        linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
-        hamburgerIcon.src = isDarkMode ? 'icons/hamburger-light.svg' : 'icons/hamburger-dark.svg';
+        emailIcon.src = isDarkMode ? 'src/icons/email-white.svg' : 'src/icons/email-black.svg';
+        githubIcon.src = isDarkMode ? 'src/icons/github-white.svg' : 'src/icons/github-black.svg';
+        linkedinIcon.src = isDarkMode ? 'src/icons/linkedin-white.svg' : 'src/icons/linkedin-black.svg';
+        hamburgerIcon.src = isDarkMode ? 'src/icons/hamburger-light.svg' : 'src/icons/hamburger-dark.svg';
     } else {
         // Project page
         const backIcon = document.getElementById('back-icon');
@@ -60,7 +60,7 @@ const handle = document.querySelector('.ant-switch-handle');
 themeToggle.addEventListener('click', () => {
     const isDarkMode = document.body.classList.toggle('dark-mode');
     const header = document.querySelector('header');
-    const isMainPage = window.location.pathname === '/Portfolio-Website/src/' || window.location.pathname.endsWith('index.html');
+    const isMainPage = window.location.pathname === '/Portfolio-Website/' || window.location.pathname.endsWith('index.html');
 
 
     const htmlElement = document.documentElement;    
@@ -98,10 +98,10 @@ themeToggle.addEventListener('click', () => {
         const linkedinIcon = document.getElementById('linkedin-icon');
         const hamburgerIcon = document.getElementById('hamburger-icon');
         
-        emailIcon.src = isDarkMode ? 'icons/email-white.svg' : 'icons/email-black.svg';
-        githubIcon.src = isDarkMode ? 'icons/github-white.svg' : 'icons/github-black.svg';
-        linkedinIcon.src = isDarkMode ? 'icons/linkedin-white.svg' : 'icons/linkedin-black.svg';
-        hamburgerIcon.src = isDarkMode ? 'icons/hamburger-light.svg' : 'icons/hamburger-dark.svg';
+        emailIcon.src = isDarkMode ? 'src/icons/email-white.svg' : 'src/icons/email-black.svg';
+        githubIcon.src = isDarkMode ? 'src/icons/github-white.svg' : 'src/icons/github-black.svg';
+        linkedinIcon.src = isDarkMode ? 'src/icons/linkedin-white.svg' : 'src/icons/linkedin-black.svg';
+        hamburgerIcon.src = isDarkMode ? 'src/icons/hamburger-light.svg' : 'src/icons/hamburger-dark.svg';
     } else {
         // Project page
         const backIcon = document.getElementById('back-icon');
