@@ -62,21 +62,33 @@
 
 
     <section id="project-page">
-        <h2>5 Band Audio Equaliser</h2>
+        <h2>Audio Equaliser in C++</h2>
 
-        <p>I built a 5-band audio equaliser project using MATLAB, allowing real-time digital signal processing of audio frequencies. The equaliser is designed to provide users with the ability to manipulate the gain of five distinct frequency bands, offering a customisable audio experience.</p>
+        <div class="pdf-container">
+            <a href="https://github.com/jay-junjiewu/audio-equaliser.git" target="_blank" rel="noopener noreferrer" class="pdf-link">
+                GitHub Link
+            </a>
+        </div>
+
+        <p>
+            This personal project is a Digital Audio Equaliser written purely using C++ STL (no external libraries) for processing audio signals. The equaliser reads in a .wav audio file and allows users to apply various gains to 5 frequency bands (sub-bass, bass, midrange, upper midrange, treble). It can also process stereo audio and save the result into a .wav file.
+        </p>
+
+        <p>
+            Note: I could have used any of the many good libraries out there, which are possibly even more efficient in terms of implementation than my code, or I could have written it all in Python. But I chose to write it all from scratch in C++ to have full control over the implementation details and to gain a better understanding of signal processing and C++ STL.
+        </p>
 
         <h3>Filter Design</h3>
 
-        <p>The equaliser uses digital bandpass filters that are logarithmically spaced to align with the sensitivity of human hearing, ensuring a natural and intuitive audio adjustment experience. These filters were designed and implemented using MATLAB's DSP capabilities, allowing precise tuning of filter coefficients to effectively isolate and process specific frequency bands for optimal sound quality and performance.</p>
+        <p>The equaliser uses digital IIR filters that are logarithmically spaced to align with the sensitivity of human hearing, ensuring a natural and intuitive audio adjustment experience. These filters were first designed and tested using MATLAB to allow for precise tuning of filter coefficients before implementing them in C++.</p>
 
         <div class="hover-container">
             <img src="../assets/project-s3/filters.png" class="image-ps2-1" />
         </div>
 
-        <h3>Operating Principle</h3>
+        <h3>MATLAB Real-Time Equaliser</h3>
 
-        <p>The gain adjustment is controlled via sliders that dynamically update the filter parameters, directly influencing the time-domain signal. These adjustments span a wide range of gain levels, from subtle to significant, which can be observed in the time graph. To ensure smooth processing, a sliding window buffer is used to handle real-time audio data, continuously updating the signal as the sliders are adjusted. This buffer allows for efficient management of the audio stream, ensuring that the filter coefficients are recalculated in real-time. Updates to the frequency response and spectrogram occur in real-time, with minimal latency, providing seamless transitions and a smooth audio experience as the frequency spectrum is adjusted.</p>
+        <p>As a prototype, I first designed a real-time equaliser in MATLAB before implementing it from scratch in C++. In MATLAB, the gain adjustment dynamically updates the filter parameters, directly influencing the time-domain signal. These adjustments span a wide range of gain levels, from subtle to significant, which can be observed in the time graph. To ensure smooth processing, a sliding window buffer is used to handle real-time audio data, continuously updating the signal as the sliders are adjusted. This buffer allows for efficient management of the audio stream, ensuring that the filter coefficients are recalculated in real-time. Updates to the frequency response and spectrogram occur in real-time, with minimal latency, providing seamless transitions and a smooth audio experience as the frequency spectrum is adjusted.</p>
 
         <div class="image-carousel">
             <div class="carousel-slide">
@@ -90,11 +102,23 @@
         </div>
         <div class="carousel-dots">
             <!-- Dots will be dynamically added here -->
-        </div>
+        </div>   
+        
+        <h3>C++ Equaliser</h3>
 
         <p>
-            If you would like access to the MATLAB source code or the calculations behind the filter design, please feel free to contact me.
-        </p>        
+            The C++ equaliser begins by reading a .wav file and parsing its header to extract the metadata, including file size, sampling frequency, bit depth, and channel information. The implementation supports .wav files with any sampling frequency and can handle both mono and stereo audio formats. This process involves manually decoding the WAV file format's RIFF header structure. The raw audio data is then read into memory for processing.
+        </p>
+
+        <p>
+            Users can specify gain adjustments for any of the five predefined frequency bands (sub-bass, bass, midrange, upper midrange, treble). The system applies zero-phase filtering to each band by performing forward and reverse digital filtering, ensuring no phase distortion. This filtering and gain adjustment are performed independently for each channel in stereo files. After processing, the modified audio data is recombined and can be saved back to a .wav file, preserving the original format and metadata.
+        </p>
+
+        <p>
+            The C++ code is in my <a href="https://github.com/jay-junjiewu/audio-equaliser.git" target="_blank" class="text-link">GitHub</a>. However, if you would like access to the MATLAB real-time equaliser source code, please feel free to contact me.
+        </p>   
+
+
         
     </section>
 
