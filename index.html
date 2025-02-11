@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="src/styles/social.css">
     <link rel="stylesheet" href="src/styles/scroll.css">
 
+    <link rel="stylesheet" href="src/styles/song.css">
+
 
 </head>
 
@@ -80,6 +82,16 @@
             I'd love to collaorate on new exciting ideas so feel free to reach out for a chat!
         </p>
     </section>
+
+
+
+    <!-- Temporary Song Loop for Around The World -->
+    <section id="song-button" data-aos="fade-up">
+        <div>
+            <button id="playPauseButton">Start Playing "Around the World" - Daft Punk</button>
+        </div>
+    </section>
+
 
     <section id="projects" data-aos="fade-up">
         <h2>Projects</h2>
@@ -201,7 +213,7 @@
     </section>
 
     <section id="updated">
-        <h3>Last Updated: January 28, 2025</h3>
+        <h3>Last Updated: February 11, 2025</h3>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -209,6 +221,18 @@
     <script src="src/scripts/tab.js" defer></script>
     <script src="src/scripts/menu.js" defer></script>
     <script src="src/scripts/scroll.js" defer></script>
+
+    <script src="src/scripts/song.js" defer></script>
+
+
+
+    <!-- Audio Loop -->
+    <audio id="backgroundAudio" loop>
+        <source src="src/assets/Daft_Punk_Around_the_World_(1997).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+ 
 
 </body>
 </html>
