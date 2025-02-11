@@ -2,16 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0 0 0;
+    margin: 30px 0 0 0;
 }
 
 #song-button div {
     text-align: center;
 }
 
+#song-button p {
+    padding: 10px 0px;
+}
+
 #playPauseButton {
     padding: 15px 30px;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     background-color: #0056b3;
     border: none;
